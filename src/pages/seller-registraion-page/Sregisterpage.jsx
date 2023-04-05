@@ -25,8 +25,8 @@ function Sregisterpage() {
   const [sellerData, setSellerData] = useState(sellerDataDetails);
 
   const handleInputData = (e) => {
-    const { name, value } = e.target;
 
+    const { name, value } = e.target;
     setSellerData({
       ...sellerData,
       [name]: value
@@ -103,7 +103,7 @@ function Sregisterpage() {
         <br />
         <input type="number"
           placeholder="Enter mobile Number"
-          className="focus:border-blue-300 focus:shadow-xl py-2 pl-3 mt-3 w-full outline-none placeholder:text-gray-500 rounded-lg text-xl  border-2"
+          className="mobileNumber focus:border-blue-300 focus:shadow-xl py-2 pl-3 mt-3 w-full outline-none placeholder:text-gray-500 rounded-lg text-xl  border-2"
           name="mNumber"
           value={sellerData.mNumber}
           onChange={handleInputData}

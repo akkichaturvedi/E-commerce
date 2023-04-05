@@ -68,7 +68,12 @@ function Adminlogin() {
                             </label>
                             <input
                                 value={email}
-                                onChange={(e) => setEmail(e.target.value)}
+                                onChange={(e) => {
+                                    if (e.target.value.length >= 30) {
+                                        return alert("Only 30 charactes are allowed")
+                                    }
+                                    setEmail(e.target.value)
+                                }}
                                 type={"email"} placeholder="email" className="input input-bordered" />
                         </div>
                         <div className="form-control">
@@ -77,7 +82,12 @@ function Adminlogin() {
                             </label>
                             <input
                                 value={password}
-                                onChange={(e) => setPassword(e.target.value)}
+                                onChange={(e) => {
+                                    if (e.target.value.length >= 16) {
+                                        return alert("Less than 16 charaters are allowed")
+                                    }
+                                    setPassword(e.target.value)
+                                }}
                                 type="password" placeholder="password" className="input input-bordered" />
                         </div>
                         <div className="form-control mt-6">

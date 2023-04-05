@@ -89,8 +89,13 @@ function Navbar() {
         <nav className="w-full px-4 py-4 border-b-1 border-gray-500 border-x-fuchsia-100 flex flex-wrap items-center justify-between shadow-xl">
             <div className="w-4/3 mb-4  md:mb-0  ">
                 <ul className="w-full flex flex-wrap items-center justify-center list-none">
+                    <li onClick={() => {
+                        navigate("/")
+                    }} id="Electronics" className="text-center text-lg font-mono pl-6 pr-2 cursor-pointer hover:text-cyan-400">
+                        Home
+                    </li>
                     <li onClick={showCategory} id="Electronics" className="text-center text-lg font-mono pl-6 pr-2 cursor-pointer hover:text-cyan-400">
-                        Electronics
+                        Electronic's
                     </li>
                     <li onClick={showCategory} id="Grocery" className="text-center text-lg font-mono pl-6 pr-2 cursor-pointer hover:text-cyan-400">
                         Grocery

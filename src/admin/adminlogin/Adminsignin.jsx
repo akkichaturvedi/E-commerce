@@ -64,7 +64,7 @@ function Adminsignin() {
     return (
 
         <>
-        <span className="text-xl bg-gray-800 text-white border border-green-500 font-mono italic p-4 sticky top-5 right-0">Use <span className="underline">a-email</span> for login For security purpose 😊😊</span>
+            <span className="text-xl bg-gray-800 text-white border border-green-500 font-mono italic p-4 sticky top-5 right-0">Use <span className="underline">a-email</span> for login For security purpose 😊😊</span>
             <div className="hero min-h-screen bg-base-200">
                 <div className="hero-content flex-col lg:flex-row-reverse">
                     <div className="card flex-shrink-0 w-full max-w-sm shadow-2xl bg-base-100">
@@ -77,7 +77,12 @@ function Adminsignin() {
                                 </label>
                                 <input
                                     value={email}
-                                    onChange={(e) => setEmail(e.target.value)}
+                                    onChange={(e) => {
+                                        if (e.target.value.length >= 30) {
+                                            return alert("Only 30 characters are valid")
+                                        }
+                                        setEmail(e.target.value)
+                                    }}
                                     type={"email"} pattern=".+@globex\.com" size="30" placeholder="email" className="input input-bordered" />
                             </div>
                             <div className="form-control">
@@ -86,7 +91,12 @@ function Adminsignin() {
                                 </label>
                                 <input
                                     value={Password}
-                                    onChange={(e) => setPassword(e.target.value)}
+                                    onChange={(e) => {
+                                        if (e.target.value.length >= 16) {
+                                            return alert("Less than 16 charaters are allowed")
+                                        }
+                                        setPassword(e.target.value)
+                                    }}
                                     type={"password"} placeholder="Password" className="input input-bordered" />
                             </div>
                             <div className="form-control">
@@ -95,7 +105,12 @@ function Adminsignin() {
                                 </label>
                                 <input
                                     value={Cpassword}
-                                    onChange={(e) => setCpassword(e.target.value)}
+                                    onChange={(e) => {
+                                        if (e.target.value.length >= 16) {
+                                            return alert("Less than 16 charaters are allowed")
+                                        }
+                                        setCpassword(e.target.value)
+                                    }}
                                     type="password" placeholder="Confirm Password" className="input input-bordered" />
                             </div>
                             <div className="form-control mt-6">

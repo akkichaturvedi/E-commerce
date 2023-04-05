@@ -80,7 +80,12 @@ function Usign() {
                             </label>
                             <input
                                 value={email}
-                                onChange={(e) => setEmail(e.target.value)}
+                                onChange={(e) => {
+                                    if (e.target.value.length >= 30) {
+                                        return alert("Only 30 charactes are allowed")
+                                    }
+                                    setEmail(e.target.value)
+                                }}
                                 type={"email"} pattern=".+@globex\.com" size="30" placeholder="email" className="input input-bordered" />
                         </div>
                         <div className="form-control">
@@ -89,7 +94,12 @@ function Usign() {
                             </label>
                             <input
                                 value={Password}
-                                onChange={(e) => setPassword(e.target.value)}
+                                onChange={(e) => {
+                                    if (e.target.value.length >= 16) {
+                                        return alert("Less than 16 charaters are allowed")
+                                    }
+                                    setPassword(e.target.value)
+                                }}
                                 type={"password"} placeholder="Password" className="input input-bordered" />
                         </div>
                         <div className="form-control">
@@ -98,7 +108,12 @@ function Usign() {
                             </label>
                             <input
                                 value={Cpassword}
-                                onChange={(e) => setCpassword(e.target.value)}
+                                onChange={(e) => {
+                                    if (e.target.value.length >= 16) {
+                                        return alert("Less than 16 charaters are allowed")
+                                    }
+                                    setCpassword(e.target.value)
+                                }}
                                 type="password" placeholder="Confirm Password" className="input input-bordered" />
                         </div>
                         <div className="form-control mt-6">

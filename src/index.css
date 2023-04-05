@@ -1,3 +1,9 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+.mobileNumber::-webkit-outer-spin-button,
+.mobileNumber::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
